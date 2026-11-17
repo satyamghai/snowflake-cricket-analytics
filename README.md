@@ -2,9 +2,9 @@
 
 ## Project Overview
 
-An end-to-end Cricket Analytics Data Engineering project designed to ingest, transform, model, and analyze structured and semi-structured cricket match data using Snowflake SQL and Power BI.
+An end-to-end Cricket Analytics Data Engineering project designed to ingest, transform, model, and analyze structured and semi-structured cricket match data using Snowflake SQL and Microsoft Power BI.
 
-The project implements a multi-layer data architecture to process raw JSON data into analytics-ready datasets, enabling match-level insights and performance analysis.
+The project implements a multi-layer data architecture to process raw JSON data into analytics-ready datasets, enabling match-level insights, team performance analysis, and statistical reporting.
 
 ## Technology Stack
 
@@ -14,7 +14,7 @@ The project implements a multi-layer data architecture to process raw JSON data 
 - **Data Ingestion:** Snowflake Stages and COPY INTO
 - **Change Data Capture:** Snowflake Streams
 - **Workflow Orchestration:** Snowflake Tasks
-- **Data Transformation:** SQL, LATERAL FLATTEN
+- **Data Transformation:** SQL, VARIANT, LATERAL FLATTEN
 - **Data Modelling:** Fact and Dimension Tables
 - **Data Visualization:** Microsoft Power BI
 
@@ -31,27 +31,41 @@ The processed datasets are connected to Microsoft Power BI for analytical report
 
 ## Key Engineering Implementations
 
-- Configured automated JSON ingestion using Snowflake stages and COPY INTO.
-- Leveraged VARIANT data types and LATERAL FLATTEN to process nested JSON structures.
+- Configured scheduled JSON data ingestion using Snowflake Stages and COPY INTO.
+- Leveraged VARIANT data types and LATERAL FLATTEN to process nested semi-structured JSON structures.
 - Implemented incremental data processing using append-only Snowflake Streams.
 - Automated dependent data transformation workflows using Snowflake Tasks.
-- Designed fact and dimension tables to support analytical queries.
-- Developed a Power BI dashboard for cricket match analysis.
+- Designed fact and dimension tables to support analytical queries and relational data modelling.
+- Developed Power BI dashboards for overall cricket statistics and match-level performance analysis.
 
 ## Analytics & Reporting
 
 The Power BI dashboard provides:
-- Overall cricket match statistics.
+
+- Overall cricket match statistics and performance indicators.
 - Team-level performance analysis.
 - Match-specific score analysis.
-- Runs-per-over and cumulative scoring trends.
+- Runs-per-over analysis.
+- Cumulative scoring trends across overs.
 
 ## Project Objectives
 
 - Demonstrate end-to-end data ingestion and transformation workflows.
-- Explore automated incremental processing in Snowflake.
-- Apply dimensional modelling concepts.
-- Convert semi-structured sports data into analytics-ready datasets.
+- Implement incremental data processing using Snowflake Streams.
+- Automate data pipeline execution using Snowflake Tasks.
+- Apply dimensional modelling concepts through fact and dimension tables.
+- Transform semi-structured JSON data into analytics-ready datasets.
+- Enable data-driven cricket performance analysis through Power BI.
+
+## Dashboard Preview
+
+### 1. Cricket Overview Dashboard
+
+![Cricket Overview Dashboard](Screenshots/Cricket_Overview.png)
+
+### 2. India vs South Africa Match Analysis
+
+![India vs South Africa Match Analysis](Screenshots/India_vs_South_Africa.png)
 
 ## Repository Structure
 
@@ -59,19 +73,27 @@ The Power BI dashboard provides:
 snowflake-cricket-analytics/
 │
 ├── README.md
+│
 ├── SQL/
+│   ├── schema_creation.sql
 │   ├── raw_zone.sql
-│   ├── clean_zone.sql
+│   ├── clean_zone1.sql
+│   ├── clean_zone2.sql
+│   ├── clean_zone3.sql
 │   ├── data_pipeline.sql
-│   ├── dimension_tables.sql
-│   └── fact_tables.sql
+│   ├── data-quality.sql
+│   ├── delivery-fact.sql
+│   ├── fact-dim-tables.sql
+│   └── populate-fact.sql
 │
 ├── PowerBI/
-│   └── cricket_analytics.pbix
+│   └── Cricket Analytics.pbix
 │
 └── Screenshots/
-    ├── cricket_overview.png
-    └── match_analysis.png
+    ├── Cricket_Overview.png
+    └── India_vs_South_Africa.png
 ```
 
-*Note: Repository structure and filenames will be aligned with the actual uploaded files.*
+## Author
+
+Developed as a hands-on Data Engineering and Analytics project using Snowflake SQL and Microsoft Power BI.
