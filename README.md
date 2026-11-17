@@ -74,6 +74,12 @@ snowflake-cricket-analytics/
 │
 ├── README.md
 │
+├── Dataset/
+│   ├── 1383534.json
+│   ├── 1383539.json
+│   ├── 1383541.json
+│   └── ... (200+ JSON files)
+│
 ├── SQL/
 │   ├── schema_creation.sql
 │   ├── raw_zone.sql
@@ -93,7 +99,6 @@ snowflake-cricket-analytics/
     ├── Cricket_Overview.png
     └── India_vs_South_Africa.png
 ```
-
 ## Author
 
 Developed as a hands-on Data Engineering and Analytics project using Snowflake SQL and Microsoft Power BI.
